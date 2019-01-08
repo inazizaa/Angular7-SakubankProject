@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../assets/library/css/main.css">
+<!--===============================================================================================-->
+
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('../../assets/library/images/bg-01.jpg');"> 
+    <div class="wrap-das100">
+            <h3>Hi {{currentUser.firstName}}!</h3>
+<p>You're logged</p>
+
+<table>
+    <th>
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" style="width: 80px"/>
+    </th>
+    <th>
+
+<p></p>
+<p> Name        : </p>
+<p> Phone Number:</p> 
+<p> Adress :</p>
+</th>
+</table>
+
+<table id="myTable" class="table table-striped table-bordered animated fadeInUp delay-1.2s shadow-lg" cellspacing="5"
+  width="100%" style="text-align:center">
+  <thead class="gradient">
+      <!-- <tr onclick="row"> -->
+      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(115, 156, 196)"></i>Account Number</th>
+      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>Balance</th>
+      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(226, 240, 107)"></i>Action</th>
+    </thead>
+    <tbody>
+        <tr> 
+            <td>20193030</td>
+            <td>2000000</td>
+            <td>
+                    <button title="Transfer" class="btn info btn-sm " (click)="clickTransfer();"><i class="fas fa-exchange-alt"
+                            style="font-size:12px"></i></button>
+                    <button title="Top Up" class="btn btn-sm warning" (click)="selectAccount(acc);"><i class="fas fa-upload"
+                            style="font-size:12px"></i></button>
+                    <button title="Tarik Tunai" class="btn btn-sm danger" (click)="deleteRow(acc);"><i class="fas fa-dollar-sign"
+                            style="font-size:12px"></i></button>
+                </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
