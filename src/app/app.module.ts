@@ -12,6 +12,8 @@ import { LoginComponent } from './Login/login.component';
 import { RegisterComponent } from './Register/register.component';
 import { DashboardComponent } from './Login/dashboard/dashboard.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { RegisterFormComponent } from './Register/register-form.component';
+// import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TransferComponent } from './transfer/transfer.component';
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
-    TransferComponent
+    TransferComponent,
+    RegisterFormComponent,
+    // AccountComponent
   ],
   imports: [
     BrowserModule,

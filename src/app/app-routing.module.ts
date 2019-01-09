@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './Login/login.component';
-import { RegisterComponent } from './Register/register.component';
+// import { RegisterComponent } from './Register/register.component';
 import { DashboardComponent } from './Login/dashboard/dashboard.component';
 import { TransferComponent } from './transfer/transfer.component';
-import { AuthGuardService } from './Login/auth-guard.service';
+import { RegisterFormComponent } from './Register/register-form.component'
 import { CanActivate } from '@angular/router';
+import { from } from 'rxjs';
+import { AuthGuardService } from './Login/auth-guard.service';
+// import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   {
@@ -22,11 +25,18 @@ const routes: Routes = [
     path : 'LoginForm',
     component: LoginComponent,
   }, 
+  // {
+  //   path : 'RegisterForm',
+  //   component: RegisterComponent
+  // }, 
   {
-    path : 'RegisterForm',
-    component: RegisterComponent,
-    canActivate: [AuthGuardService]
+    path : 'RegisterForm2',
+    component: RegisterFormComponent
   }
+  // {
+  //   path : 'AccountForm',
+  //   component: AccountComponent,
+  // },
 ];
 
 @NgModule({

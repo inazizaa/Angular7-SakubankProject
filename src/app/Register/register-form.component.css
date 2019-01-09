@@ -1,0 +1,11 @@
+.linkstyle{
+    color: white;
+    cursor:pointer;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .linkstyle:hover{
+    color: blue;
+    text-decoration: underline;
+  }

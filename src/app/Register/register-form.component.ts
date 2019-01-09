@@ -5,15 +5,17 @@ import { Router } from '@angular/router';
 import { Customer } from '../Login/customer';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterFormComponent implements OnInit {
+  isValidFormSubmitted = null;
   customerFormGroup: FormGroup;
   messageHeader: string;
   message: string;
   constructor(private customerService: CustomerService, private formbuilder: FormBuilder, private route: Router) { }
+  customer: Customer = new Customer();
 
   ngOnInit() {
     window.scroll(0,0)
@@ -38,7 +40,7 @@ export class RegisterComponent implements OnInit {
     customer.address = this.customerFormGroup.controls['address'].value;
     customer.idcard = this.customerFormGroup.controls['idcard'].value;
     customer.phonenumber = this.customerFormGroup.controls['phonenumber'].value;
-    // customer.pictures = this.customerFormGroup.controls[''].value;
+    customer.pictures = ' '
     customer.username = this.customerFormGroup.controls['username'].value;
     customer.password = this.customerFormGroup.controls['password'].value;
 
@@ -75,4 +77,8 @@ export class RegisterComponent implements OnInit {
 loginForm() {
   this.route.navigate(['/LoginForm'])
 }
+deleteMessage(){
+  this.message=null
+}
+
 }

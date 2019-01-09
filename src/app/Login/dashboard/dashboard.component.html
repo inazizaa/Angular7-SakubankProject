@@ -8,34 +8,39 @@
 <div class="limiter">
   <div class="container-login100" style="background-image: url('../../assets/library/images/bg-01.jpg');"> 
     <div class="wrap-das100">
-            <h3>Hi {{currentUser.firstName}}!</h3>
-<p>You're logged</p>
+<h3>Hi, {{data.firstname}}!</h3>
+<p>You're logged</p><br>
 
 <table>
     <th>
-    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" style="width: 80px"/>
-    </th>
+    <img src='../../../assets/library/images/imgprofile.jpg' style="width: 100px"/>
+    &nbsp;   
+</th>
     <th>
+<p> Name        : {{data.firstname}} &nbsp; {{data.lastname}}</p>
+<p> Phone Number: {{data.phonenumber}}</p> 
+<p> Birthdate   : {{data.birthdate}}</p> 
+<p> Address     : {{data.address}}</p><br>
 
-<p></p>
-<p> Name        : </p>
-<p> Phone Number:</p> 
-<p> Adress :</p>
 </th>
 </table>
 
-<table id="myTable" class="table table-striped table-bordered animated fadeInUp delay-1.2s shadow-lg" cellspacing="5"
+<table id="myTable" class="table table-bordered animated fadeInUp delay-1.2s shadow-lg" cellspacing="2"
   width="100%" style="text-align:center">
   <thead class="gradient">
       <!-- <tr onclick="row"> -->
       <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(115, 156, 196)"></i>Account Number</th>
+      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>Type Account</th>
+      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>PIN</th>
       <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>Balance</th>
       <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(226, 240, 107)"></i>Action</th>
     </thead>
     <tbody>
-        <tr> 
-            <td>20193030</td>
-            <td>2000000</td>
+        <tr *ngFor="let acc of ListAccount"> 
+            <td>{{acc.accountnumber}}</td>
+            <td>{{acc.type}}</td>
+            <td>{{acc.pin}}</td>
+            <td>{{acc.balance}}</td>
             <td>
                     <button title="Transfer" class="btn info btn-sm " (click)="clickTransfer();"><i class="fas fa-exchange-alt"
                             style="font-size:12px"></i></button>
@@ -47,6 +52,7 @@
         </tr>
     </tbody>
     </table>
+    <button (click)="toform()" class="btn btn-primary" type="submit">CREATE ACCOUNT</button>
     </div>
     </div>
     </div>

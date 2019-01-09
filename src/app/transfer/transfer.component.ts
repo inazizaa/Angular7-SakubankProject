@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transfer',
@@ -8,7 +9,7 @@ import swal from 'sweetalert2';
 })
 export class TransferComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,6 @@ export class TransferComponent implements OnInit {
   }
 
   cancelChanges(){
-    
+    this.route.navigate(['/dashboard']);
   }
 }

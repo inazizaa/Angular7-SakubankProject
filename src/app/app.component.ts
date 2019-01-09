@@ -7,12 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'enigma-api';
+  title = 'SakuBank';
 
 constructor(private route: Router ){}
 
   teslogin(){
-    if(sessionStorage.getItem("username")){
+    if(sessionStorage.getItem("customernumber")){
       return true;
     }
     else
