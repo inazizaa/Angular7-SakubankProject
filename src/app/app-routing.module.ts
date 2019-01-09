@@ -8,35 +8,25 @@ import { RegisterFormComponent } from './Register/register-form.component'
 import { CanActivate } from '@angular/router';
 import { from } from 'rxjs';
 import { AuthGuardService } from './Login/auth-guard.service';
-// import { AccountComponent } from './account/account.component';
+import { AccountComponent } from './account/account.component';
+import { TopupComponent } from './topup/topup.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { HistoryTransferComponent } from './History/history-transfer/history-transfer.component';
+import { HistorywithdrawComponent } from './History/historywithdraw/historywithdraw.component';
+import { HistoryTopupComponent } from './History/history-topup/history-topup.component';
 
 const routes: Routes = [
-  {
-    path : 'transfer',
-    component: TransferComponent,
-    canActivate: [AuthGuardService]
-  }, 
-  {
-    path : 'dashboard',
-    component: DashboardComponent,
-     canActivate: [AuthGuardService]
-  }, 
-  {
-    path : 'LoginForm',
-    component: LoginComponent,
-  }, 
-  // {
-  //   path : 'RegisterForm',
-  //   component: RegisterComponent
-  // }, 
-  {
-    path : 'RegisterForm2',
-    component: RegisterFormComponent
-  }
-  // {
-  //   path : 'AccountForm',
-  //   component: AccountComponent,
-  // },
+  { path : 'transfer', component: TransferComponent, canActivate: [AuthGuardService] }, 
+  { path : 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService] }, 
+  { path : 'LoginForm', component: LoginComponent},  
+  { path : 'RegisterForm2', component: RegisterFormComponent },
+  { path : 'Account', component: AccountComponent },
+  { path : 'Topup', component: TopupComponent },
+  { path : 'Withdraw', component: WithdrawComponent },
+  { path : 'Historytransfer', component: HistoryTransferComponent },
+  { path : 'Historywithdraw', component: HistorywithdrawComponent },
+  { path : 'Historytopup', component: HistoryTopupComponent },
+
 ];
 
 @NgModule({

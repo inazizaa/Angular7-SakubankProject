@@ -9,21 +9,29 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LoginComponent } from './Login/login.component';
-import { RegisterComponent } from './Register/register.component';
 import { DashboardComponent } from './Login/dashboard/dashboard.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { RegisterFormComponent } from './Register/register-form.component';
-// import { AccountComponent } from './account/account.component';
+ import { AccountComponent } from './account/account.component';
+import { TopupComponent } from './topup/topup.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { HistoryTransferComponent } from './History/history-transfer/history-transfer.component';
+import { HistoryTopupComponent } from './History/history-topup/history-topup.component';
+import { HistorywithdrawComponent } from './History/historywithdraw/historywithdraw.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent,
     TransferComponent,
     RegisterFormComponent,
-    // AccountComponent
+     AccountComponent,
+     TopupComponent,
+     WithdrawComponent,
+     HistoryTransferComponent,
+     HistoryTopupComponent,
+     HistorywithdrawComponent
   ],
   imports: [
     BrowserModule,

@@ -24,9 +24,17 @@ export class DashboardComponent implements OnInit {
   this.getaccount()
 
   }
-  clickTransfer(){
-  this.route.navigate(['/transfer'])
+  toTransfer(){
+  this.route.navigate(['/Historytransfer'])
   }
+
+  toTopup(){
+    this.route.navigate(['/Historytopup'])
+    }
+
+  toWithdraw(){
+      this.route.navigate(['/Historywithdraw'])
+      }
 
   getuser() {
     let customer: Customer = new Customer();
@@ -51,6 +59,6 @@ export class DashboardComponent implements OnInit {
   }
 
   toform(){
-    this.route.navigate(['/AccountForm'])
+    this.route.navigate(['/Account'])
   }
 }

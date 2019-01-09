@@ -33,7 +33,7 @@
       <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>Type Account</th>
       <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>PIN</th>
       <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>Balance</th>
-      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(226, 240, 107)"></i>Action</th>
+      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(226, 240, 107)"></i>History</th>
     </thead>
     <tbody>
         <tr *ngFor="let acc of ListAccount"> 
@@ -42,11 +42,11 @@
             <td>{{acc.pin}}</td>
             <td>{{acc.balance}}</td>
             <td>
-                    <button title="Transfer" class="btn info btn-sm " (click)="clickTransfer();"><i class="fas fa-exchange-alt"
+                    <button title="History Transfer" class="btn info btn-sm " (click)="toTransfer();"><i class="fas fa-exchange-alt"
                             style="font-size:12px"></i></button>
-                    <button title="Top Up" class="btn btn-sm warning" (click)="selectAccount(acc);"><i class="fas fa-upload"
+                    <button title="History Top Up" class="btn btn-sm warning" (click)="toTopup();"><i class="fas fa-upload"
                             style="font-size:12px"></i></button>
-                    <button title="Tarik Tunai" class="btn btn-sm danger" (click)="deleteRow(acc);"><i class="fas fa-dollar-sign"
+                    <button title="History Withdraw" class="btn btn-sm danger" (click)="toWithdraw();"><i class="fas fa-dollar-sign"
                             style="font-size:12px"></i></button>
                 </td>
         </tr>

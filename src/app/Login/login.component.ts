@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         this.customerFormGroup.controls['password'].setValue('');
       }
       else{
-        sessionStorage.setItem("customernumber",JSON.stringify(response['values']));
+        sessionStorage.setItem("customernumber",JSON.stringify(response['values'].customernumber));
         this.route.navigate(['/dashboard']) //untuk direct ke dashboard
       }
       // this.result.emit(true);

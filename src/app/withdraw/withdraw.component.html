@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../assets/library/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/library/css/main.css">
+<!--===============================================================================================-->
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('../../assets/library/images/bg-01.jpg');"> 
+    <div class="container col-md-7">
+      <form [formGroup]="accountFormGroup" class="bgcol shadow-lg animated fadeInDown">
+          <div class="form-group">
+              <div class="col-12" style="text-align:center">
+                  <h1>&nbsp;&nbsp;<a>WITHDRAW</a></h1>
+                  <hr>
+              </div>
+          </div>
+          <div class="container">
+              <div class="form">                      
+                  <div class="col-12">
+                      <label>Amount</label>
+                      <input type="number" class="form-control" formControlName="WdAmount">
+                  </div>
+                  <div class="col-12">
+                    <label>PIN</label>
+                    <input type="number" class="form-control" formControlName="ReferalCode">
+                </div>
+                  <div class="row">
+                      <div class="col-12" style="text-align:center">
+                          <button class="btn btn-outline-primary" type="button" (click)="savesweet()">OK</button>
+                          <button class="btn btn-outline-primary" type="button" (click)="cancelChanges()">Cancel</button>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div>
+                          &nbsp;
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+  
+  
+    </div>
+</div>
+</div>
