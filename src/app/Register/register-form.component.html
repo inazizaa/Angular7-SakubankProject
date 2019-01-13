@@ -47,6 +47,16 @@
         </div>
 
         <div class="wrap-input100 validate-input">
+        <!-- <label>Gender</label> -->
+        <select class="input100" formControlName="gender">
+            <!-- <option  style="color:black" selected disabled>Select gender</option> -->
+            <option style="color:black" value="Male">Male</option>
+            <option  style="color:black"value="Female">Female</option>
+            <span class="focus-input100"></span>
+        </select>
+      </div>
+
+        <div class="wrap-input100 validate-input">
           <input class="input100" type="date" placeholder="Birth Date" formControlName="birthdate">
           <span class="focus-input100"></span>
         </div>
@@ -82,7 +92,7 @@
             Register
           </button>
         </div><br>
-        <div class="text-center p-t-90">
+        <div class="text-center p-t-50">
           <p class="loginhere">
             Have already an account ? <a (click)="loginForm()" style="color:white; cursor:pointer;" class="linkstyle">Login
               here</a>

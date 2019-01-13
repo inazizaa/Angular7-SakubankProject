@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Customer } from '../customer'
-import { Account } from '../account'
-import { CustomerService } from '../customer.service'
+import { Customer } from '../../Model/customer'
+import { Account } from '../../Model/account'
+import { CustomerService } from '../../service/customer.service'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   this.getaccount()
 
   }
+  
   toTransfer(){
   this.route.navigate(['/Historytransfer'])
   }
@@ -35,6 +36,10 @@ export class DashboardComponent implements OnInit {
   toWithdraw(){
       this.route.navigate(['/Historywithdraw'])
       }
+  
+  toInbox(){
+    this.route.navigate(['/Historyinbox'])
+    }
 
   getuser() {
     let customer: Customer = new Customer();

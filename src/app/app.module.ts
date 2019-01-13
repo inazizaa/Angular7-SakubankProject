@@ -18,6 +18,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import { HistoryTransferComponent } from './History/history-transfer/history-transfer.component';
 import { HistoryTopupComponent } from './History/history-topup/history-topup.component';
 import { HistorywithdrawComponent } from './History/historywithdraw/historywithdraw.component';
+import { HistoryinboxComponent } from './History/historyinbox/historyinbox.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { HistorywithdrawComponent } from './History/historywithdraw/historywithd
      WithdrawComponent,
      HistoryTransferComponent,
      HistoryTopupComponent,
-     HistorywithdrawComponent
+     HistorywithdrawComponent,
+     HistoryinboxComponent,
+     HistoryinboxComponent
   ],
   imports: [
     BrowserModule,

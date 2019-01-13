@@ -9,50 +9,53 @@
   <div class="container-login100" style="background-image: url('../../assets/library/images/bg-01.jpg');"> 
     <div class="wrap-das100">
 <h3>Hi, {{data.firstname}}!</h3>
-<p>You're logged</p><br>
+<p style="font-size: 18px">Welcome to Sakubank Web</p><br>
 
-<table>
-    <th>
-    <img src='../../../assets/library/images/imgprofile.jpg' style="width: 100px"/>
-    &nbsp;   
-</th>
-    <th>
-<p> Name        : {{data.firstname}} &nbsp; {{data.lastname}}</p>
-<p> Phone Number: {{data.phonenumber}}</p> 
-<p> Birthdate   : {{data.birthdate}}</p> 
-<p> Address     : {{data.address}}</p><br>
+    <table>
+        <th>
+            <p style="font-size: 15px"> Name &nbsp;&nbsp; </p>
+            <p style="font-size: 15px"> Phone &nbsp;&nbsp; </p> 
+            <p style="font-size: 15px">Birthdate &nbsp; </p> 
+            <p style="font-size: 15px">Address &nbsp;&nbsp; </p> <br>
+        </th>
+        <th>
+            <p style="font-size: 15px"> &nbsp;:{{data.firstname}} {{data.lastname}} </p>
+            <p style="font-size: 15px"> &nbsp;:{{data.phonenumber}} </p>
+            <p style="font-size: 15px">&nbsp;:{{data.birthdate}} </p> 
+            <p style="font-size: 15px"> &nbsp;:{{data.address}} </p> <br>
+        </th>
+    </table>
 
-</th>
-</table>
-
-<table id="myTable" class="table table-bordered animated fadeInUp delay-1.2s shadow-lg" cellspacing="2"
+<table id="myTable" class="table table-bordered animated fadeInUp delay-1.2s" cellspacing="2"
   width="100%" style="text-align:center">
   <thead class="gradient">
       <!-- <tr onclick="row"> -->
-      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(115, 156, 196)"></i>Account Number</th>
-      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>Type Account</th>
-      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>PIN</th>
-      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(116, 209, 163)"></i>Balance</th>
-      <th style="text-align: center"><i class="fas fa-leaf" style="color:rgb(226, 240, 107)"></i>History</th>
+      <th style="text-align: center">Account Number</th>
+      <th style="text-align: center">Type Account</th>
+      <th style="text-align: center">PIN</th>
+      <th style="text-align: center">Balance</th>
+      <th style="text-align: center">History</th>
     </thead>
     <tbody>
         <tr *ngFor="let acc of ListAccount"> 
             <td>{{acc.accountnumber}}</td>
             <td>{{acc.type}}</td>
             <td>{{acc.pin}}</td>
-            <td>{{acc.balance}}</td>
+            <td>{{acc.balance | currency: "Rp. "}}</td>
             <td>
-                    <button title="History Transfer" class="btn info btn-sm " (click)="toTransfer();"><i class="fas fa-exchange-alt"
-                            style="font-size:12px"></i></button>
-                    <button title="History Top Up" class="btn btn-sm warning" (click)="toTopup();"><i class="fas fa-upload"
-                            style="font-size:12px"></i></button>
-                    <button title="History Withdraw" class="btn btn-sm danger" (click)="toWithdraw();"><i class="fas fa-dollar-sign"
-                            style="font-size:12px"></i></button>
+                    <button title="History Transfer" class="btn default" (click)="toTransfer();"><i class="fas fa-exchange-alt"
+                            style="font-size:18px"></i></button> &nbsp;
+                    <button title="History Top Up" class="btn default" (click)="toTopup();"><i class="fas fa-upload"
+                            style="font-size:18px"></i></button> &nbsp;
+                    <button title="History Withdraw" class="btn default" (click)="toWithdraw();"><i class="fas fa-dollar-sign"
+                            style="font-size:18px"></i></button> &nbsp;
+                    <button title="History Inbox" class="btn default" (click)="toInbox();"><i class="fas fa-download"
+                        style="font-size:18px"></i></button>
                 </td>
         </tr>
     </tbody>
     </table>
-    <button (click)="toform()" class="btn btn-primary" type="submit">CREATE ACCOUNT</button>
+    <!-- <button (click)="toform()" class="btn btn-primary" type="submit">CREATE ACCOUNT</button> -->
     </div>
     </div>
     </div>

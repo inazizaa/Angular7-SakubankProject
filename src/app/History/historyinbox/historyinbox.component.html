@@ -8,7 +8,7 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('../../assets/library/images/bg-01.jpg');">
         <div class="wrap-das100">
-            <h3>HISTORY TRANSFER</h3>
+            <h3>HISTORY INBOX</h3>
             <br><br>
             <table id="myTable" class="table table-bordered animated fadeInUp delay-1.2s shadow-lg" cellspacing="2"
                 width="100%" style="text-align:center">
@@ -16,17 +16,16 @@
                     <!-- <tr onclick="row"> -->
                     <th style="text-align: center">Date</th>
                     <th style="text-align: center">Amount</th>
-                    <th style="text-align: center">BankDestination</th>
-                    <th style="text-align: center">Account Destination</th>
-                    <th style="text-align: center">Description</th>
+                    <th style="text-align: center">Bank Source</th>
+                    <th style="text-align: center">Account Source</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let trans of ListTransaction | paginate: { itemsPerPage: 5, currentPage: p };">
-                        <td>{{trans.trdate}}</td>
-                        <td>{{trans.tramount | currency: "Rp. "}}</td>
-                        <td>{{trans.bankdest}}</td>
-                        <td>{{trans.accountdest}}</td>
-                        <td>{{trans.trdesc}}</td>
+                    <tr *ngFor="let ibx of ListInbox | paginate: { itemsPerPage: 5, currentPage: p };">
+                        <td>{{ibx.inboxdate}}</td>
+                        <td>{{ibx.inboxamount | currency: "Rp. "}}</td>
+                        <td>{{ibx.banksource}}</td>
+                        <td>{{ibx.accountsource}}</td>
+                        <!-- <td>{{ibx.accountdest}}</td> -->
                     </tr>
                 </tbody>
             </table>

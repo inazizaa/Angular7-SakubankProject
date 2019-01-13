@@ -14,6 +14,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import { HistoryTransferComponent } from './History/history-transfer/history-transfer.component';
 import { HistorywithdrawComponent } from './History/historywithdraw/historywithdraw.component';
 import { HistoryTopupComponent } from './History/history-topup/history-topup.component';
+import { HistoryinboxComponent } from './History/historyinbox/historyinbox.component';
 
 const routes: Routes = [
   { path : 'transfer', component: TransferComponent, canActivate: [AuthGuardService] }, 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path : 'Account', component: AccountComponent },
   { path : 'Topup', component: TopupComponent },
   { path : 'Withdraw', component: WithdrawComponent },
+  { path : 'Historyinbox', component: HistoryinboxComponent },
   { path : 'Historytransfer', component: HistoryTransferComponent },
   { path : 'Historywithdraw', component: HistorywithdrawComponent },
   { path : 'Historytopup', component: HistoryTopupComponent },

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CustomerService } from '../Login/customer.service';
+import { CustomerService } from '../service/customer.service';
 import { Router } from '@angular/router';
-import { Customer } from '../Login/customer';
+import { Customer } from '../Model/customer';
 
 @Component({
   selector: 'app-register-form',
@@ -10,7 +10,7 @@ import { Customer } from '../Login/customer';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
-  isValidFormSubmitted = null;
+  customernumber:number;
   customerFormGroup: FormGroup;
   messageHeader: string;
   message: string;
@@ -18,11 +18,16 @@ export class RegisterFormComponent implements OnInit {
   customer: Customer = new Customer();
 
   ngOnInit() {
-    window.scroll(0,0)
+    this.customernumber = parseInt(sessionStorage.getItem('customernumber'))
+    if (this.customernumber != null){
+      this.route.navigate(['/dashboard'])
+    }
+    window.scroll(0, 0)
     this.customerFormGroup = this.formbuilder.group({
       // customernumber: [''],
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
+      gender: ['', Validators.required],
       birthdate: ['', Validators.required],
       address: ['', Validators.required],
       idcard: ['', Validators.required],
@@ -36,6 +41,7 @@ export class RegisterFormComponent implements OnInit {
     let customer: Customer = new Customer();
     customer.firstname = this.customerFormGroup.controls['firstname'].value;
     customer.lastname = this.customerFormGroup.controls['lastname'].value;
+    customer.gender = this.customerFormGroup.controls['gender'].value;
     customer.birthdate = this.customerFormGroup.controls['birthdate'].value;
     customer.address = this.customerFormGroup.controls['address'].value;
     customer.idcard = this.customerFormGroup.controls['idcard'].value;
@@ -51,8 +57,9 @@ export class RegisterFormComponent implements OnInit {
         this.messageHeader = "Something went wrong, please your input carefully"
         console.log(this.messageHeader)
       } else {
-        sessionStorage.setItem("customernumber",JSON.stringify(response['values']))
-        this.route.navigate(['/dashboard'])      }
+        sessionStorage.setItem("customernumber", JSON.stringify(response['values']))
+        this.route.navigate(['/dashboard'])
+      }
     }, (err) => {
       alert('error : ' + JSON.stringify(err));
     })
@@ -74,11 +81,11 @@ export class RegisterFormComponent implements OnInit {
     })
   }
 
-loginForm() {
-  this.route.navigate(['/LoginForm'])
-}
-deleteMessage(){
-  this.message=null
-}
+  loginForm() {
+    this.route.navigate(['/LoginForm'])
+  }
+  deleteMessage() {
+    this.message = null
+  }
 
 }

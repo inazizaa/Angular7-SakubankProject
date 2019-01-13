@@ -124,7 +124,7 @@ a {
 }
 
 .b {
-  background: linear-gradient(to right, #ff6666 0%, #ff0000 100%);
+  background: linear-gradient(to bottom right, #66ccff 0%, #cc33ff 100%);
 }
 
 
@@ -139,4 +139,19 @@ a {
 .navbar a:hover {
   background: rgb(210, 211, 209);
   color: black;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.default {background: #ddd;}
+.default:hover {background: linear-gradient(to top left, #ffcc99 0%, #99ccff 100%);}
+
+.serif {
+  font-family: "Times New Roman", Times, serif;
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { AccountService } from './account.service';
-import { Account } from '../Login/account';
+import { AccountService } from '../service/account.service';
+import { Account } from '../Model/account';
 
 @Component({
   selector: 'app-account',

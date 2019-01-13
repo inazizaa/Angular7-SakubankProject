@@ -7,28 +7,39 @@
 <!--===============================================================================================-->
 <div class="limiter">
   <div class="container-login100" style="background-image: url('../../assets/library/images/bg-01.jpg');"> 
-    <div class="container col-md-7">
-      <form [formGroup]="accountFormGroup" class="bgcol shadow-lg animated fadeInDown">
+    <div class="container col-md-7" class="wrap-tra100">
+      <form [formGroup]="withdrawFormGroup" class="bgcol shadow-lg animated fadeInDown">
           <div class="form-group">
               <div class="col-12" style="text-align:center">
-                  <h1>&nbsp;&nbsp;<a>WITHDRAW</a></h1>
+                    <p style="font-size: 25px"><b>WITHDRAW</b></p>
                   <hr>
               </div>
           </div>
           <div class="container">
               <div class="form">                      
                   <div class="col-12">
-                      <label>Amount</label>
-                      <input type="number" class="form-control" formControlName="WdAmount">
+                    <label>Amount </label>
+                    <select class="custom-select" formControlName="wdamount">
+                        <option selected disabled>Select Amount</option>
+                        <option value=50000>50.000</option>
+                        <option value=100000>100.000</option>
+                        <option value=200000>200.000</option>
+                        <option value=400000>400.000</option>
+                        <option value=600000>600.000</option>
+                    </select>
                   </div>
-                  <div class="col-12">
+				<p *ngIf="messageamount" class="" style="color: red; text-align:center;">{{messageamount}}</p>
+				<p *ngIf="messageamount2" class="" style="color: red; text-align:center;">{{messageamount2}}</p>
+                <div class="col-12">
                     <label>PIN</label>
-                    <input type="number" class="form-control" formControlName="ReferalCode">
+                    <input type="password" class="form-control" formControlName="pin" (keyup)="clearmsg()">
                 </div>
+				<p *ngIf="message" class="" style="color: red; text-align:center;">{{message}}</p>
+                <br>
                   <div class="row">
                       <div class="col-12" style="text-align:center">
-                          <button class="btn btn-outline-primary" type="button" (click)="savesweet()">OK</button>
-                          <button class="btn btn-outline-primary" type="button" (click)="cancelChanges()">Cancel</button>
+                          <button class="btn btn-outline-primary"  style="color: white" type="button" (click)="submitDataFormSave()">OK</button>
+                          <button class="btn btn-outline-primary"  style="color: white" type="button" (click)="cancelChanges()">Cancel</button>
                       </div>
                   </div>
                   <div class="row">
@@ -39,8 +50,6 @@
               </div>
           </div>
       </form>
-  
-  
     </div>
 </div>
 </div>

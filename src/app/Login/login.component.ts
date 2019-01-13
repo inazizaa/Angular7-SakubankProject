@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { Customer } from './customer'
-import { CustomerService } from './customer.service'
+import { Customer } from '../Model/customer'
+import { CustomerService } from '../service/customer.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import  swal  from 'sweetalert2'
 import { Router } from '@angular/router';
@@ -13,13 +13,17 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   customerFormGroup: FormGroup;
   message:string;
-
+  customernumber:number;
   @Input()
   customer: Customer;
 
   constructor(private customerService: CustomerService, private formbuilder: FormBuilder, private route: Router) { }
 
   ngOnInit() {
+    this.customernumber = parseInt(sessionStorage.getItem('customernumber'))
+    if (this.customernumber != null){
+      this.route.navigate(['/dashboard'])
+    }
     window.scroll(0,0)
     this.customerFormGroup = this.formbuilder.group({
       username: ['', Validators.required],
@@ -44,6 +48,17 @@ export class LoginComponent implements OnInit {
         this.customerFormGroup.controls['password'].setValue('');
       }
       else{
+        const toast = swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 2000
+        });
+        
+        toast({
+          type: 'success',
+          title: 'Signed in successfully'
+        })
         sessionStorage.setItem("customernumber",JSON.stringify(response['values'].customernumber));
         this.route.navigate(['/dashboard']) //untuk direct ke dashboard
       }

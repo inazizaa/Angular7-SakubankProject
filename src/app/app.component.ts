@@ -9,17 +9,25 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'SakuBank';
 
-constructor(private route: Router ){}
+  constructor(private route: Router) { }
 
-  teslogin(){
-    if(sessionStorage.getItem("customernumber")){
+  ngOnInit() {
+    if (sessionStorage.getItem("customernumber") != null) {
+      this.route.navigate(['/dashboard']);
+    }
+    else
+      this.route.navigate(['/LoginForm']);
+  }
+
+  teslogin() {
+    if (sessionStorage.getItem("customernumber")) {
       return true;
     }
     else
-    return false;
+      return false;
   }
 
-  thislogout(){
+  thislogout() {
     sessionStorage.clear();
     this.route.navigate(['/LoginForm']);
   }

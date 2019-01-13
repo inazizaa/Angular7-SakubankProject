@@ -7,35 +7,24 @@
 <!--===============================================================================================-->
 <div class="limiter">
   <div class="container-login100" style="background-image: url('../../assets/library/images/bg-01.jpg');"> 
-    <div class="container col-md-7">
-      <form [formGroup]="accountFormGroup" class="bgcol shadow-lg animated fadeInDown">
+    <div class="container col-md-7" class="wrap-tra100">
+      <form [formGroup]="topupFormGroup" class="bgcol shadow-lg animated fadeInDown">
           <div class="form-group">
               <div class="col-12" style="text-align:center">
-                  <h1>&nbsp;&nbsp;<a>TOP UP</a></h1>
+                    <p style="font-size: 25px"><b>TOP UP</b></p>
                   <hr>
               </div>
           </div>
           <div class="container">
               <div class="form">
                   <div class="col-12">
-                      <label>Bank Tujuan </label>
-                        <select class="custom-select">
-                                <option selected>select bank</option>
-                                <option value="1">Bank 1</option>
-                                <option value="2">Bank 2</option>
-                                <option value="3">Bank 3</option>
-                              </select>
-                      <label>Rekening Tujuan</label>
-                      <input type="text" class="form-control" formControlName="openDate">
-                  </div>
-                  <div class="col-12">
-                      <label>Jumlah</label>
-                      <input type="number" class="form-control" formControlName="balance">
-                  </div>
+                      <label>Amount</label>
+                      <input type="number" class="form-control" formControlName="tamount">
+                  </div><br>
                   <div class="row">
                       <div class="col-12" style="text-align:center">
-                          <button class="btn btn-outline-primary" type="button" (click)="savesweet()">OK</button>
-                          <button class="btn btn-outline-primary" type="button" (click)="cancelChanges()">Cancel</button>
+                          <button class="btn btn-outline-primary" type="button"  style="color: white" (click)="submitDataFormSave()">OK</button>
+                          <button class="btn btn-outline-primary" type="button"  style="color: white" (click)="getpin()">Cancel</button>
                       </div>
                   </div>
                   <div class="row">
@@ -46,8 +35,6 @@
               </div>
           </div>
       </form>
-  
-  
     </div>
 </div>
 </div>
